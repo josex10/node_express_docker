@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  node_api_express_dev:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      # you_local_path/:your_container_path/ which I bind to reflect changes to container
+      - ./src:/app/src
+    command: npm run dev
